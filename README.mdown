@@ -78,3 +78,18 @@ Checks run: BasicAuth, ContentTag, CrossSiteScripting, DefaultRoutes, Deserializ
 | Security Warnings | 0 (0) |
 +-------------------+-------+
 </pre>
+
+# Bobby Tables
+Remove the SQL injection vulnerability
+
+Changed the line from post.rb from:
+<pre>
+      #unsafe - SQL injection
+      includes(comments: :replies).where("title like '%#{search}%'")
+</pre>
+
+To:
+<pre>
+      #safe now
+      includes(comments: :replies).where('title like ?', "%#{search}%"])
+</pre>

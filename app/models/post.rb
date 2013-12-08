@@ -14,7 +14,9 @@ class Post < ActiveRecord::Base
       #where("title like ?", "%#{search}%")
       #
       #unsafe - SQL injection
-      includes(comments: :replies).where("title like '%#{search}%'")
+      # includes(comments: :replies).where("title like '%#{search}%'")
+      #safe now
+      includes(comments: :replies).where('title like ?', "%#{search}%"])
     else
       includes(comments: :replies).order("updated_at DESC")
     end
