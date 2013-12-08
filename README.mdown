@@ -49,3 +49,32 @@ Checks run: BasicAuth, ContentTag, CrossSiteScripting, DefaultRoutes, Deserializ
 | High       |       |        | Session Setting | Session secret should not be included in version control near line 7 |
 +------------+-------+--------+-----------------+----------------------------------------------------------------------+
 </pre>
+
+# Secret Key
+Remove the secret key.  Nice easy low hanging fruit.
+
+## Run Brakeman again
+
+<pre>
++BRAKEMAN REPORT+
+
+Application path: /Users/susan/Documents/myProjects/codefellows/insecure_blog/ivan_the_terribles_blog
+Rails version: 3.2.16
+Brakeman version: 2.2.0
+Started at 2013-12-08 00:00:29 -0800
+Duration: 1.113598 seconds
+Checks run: BasicAuth, ContentTag, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, JRubyXML, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, QuoteTableName, Redirect, Render, ResponseSplitting, SQL, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionSettings, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoS, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, YAMLParsing
+
+
++SUMMARY+
+
++-------------------+-------+
+| Scanned/Reported  | Total |
++-------------------+-------+
+| Controllers       | 4     |
+| Models            | 3     |
+| Templates         | 21    |
+| Errors            | 0     |
+| Security Warnings | 0 (0) |
++-------------------+-------+
+</pre>

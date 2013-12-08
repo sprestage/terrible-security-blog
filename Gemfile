@@ -29,6 +29,8 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-debugger'
   gem 'hirb'
+# Figaro for removing secret keys from github
+  gem 'figaro'
 end
 
 group :test do
