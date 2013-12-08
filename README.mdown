@@ -3,3 +3,49 @@ This is a terrible blog put together with terrible security as an
 exercise.  The first commit has all the flaws in place, with no
 security improvements as yet.
 
+# Brakeman
+Add Brakeman to see how bad things are.
+
+[![Security Status](http://rails-brakeman.com/sprestage/terrible-security-blog)](http://rails-brakeman.com/sprestage/terrible-security-blog)
+
+## First run of brakeman
+<pre>
+  $ brakeman .
+
++BRAKEMAN REPORT+
+
+Application path: /Users/susan/Documents/myProjects/codefellows/insecure_blog/ivan_the_terribles_blog
+Rails version: 3.2.16
+Brakeman version: 2.2.0
+Started at 2013-12-07 23:54:45 -0800
+Duration: 1.266109 seconds
+Checks run: BasicAuth, ContentTag, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, JRubyXML, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, QuoteTableName, Redirect, Render, ResponseSplitting, SQL, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionSettings, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoS, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, YAMLParsing
+
+
++SUMMARY+
+
++-------------------+-------+
+| Scanned/Reported  | Total |
++-------------------+-------+
+| Controllers       | 4     |
+| Models            | 3     |
+| Templates         | 21    |
+| Errors            | 0     |
+| Security Warnings | 1 (1) |
++-------------------+-------+
+
++-----------------+-------+
+| Warning Type    | Total |
++-----------------+-------+
+| Session Setting | 1     |
++-----------------+-------+
+
+
++SECURITY WARNINGS+
+
++------------+-------+--------+-----------------+----------------------------------------------------------------------+
+| Confidence | Class | Method | Warning Type    | Message                                                              |
++------------+-------+--------+-----------------+----------------------------------------------------------------------+
+| High       |       |        | Session Setting | Session secret should not be included in version control near line 7 |
++------------+-------+--------+-----------------+----------------------------------------------------------------------+
+</pre>
