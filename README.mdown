@@ -6,7 +6,7 @@ security improvements as yet.
 # Brakeman
 Add Brakeman to see how bad things are.
 
-[![Security Status](http://rails-brakeman.com/sprestage/terrible-security-blog)](http://rails-brakeman.com/sprestage/terrible-security-blog)
+[![Security Status](http://rails-brakeman.com/sprestage/terrible-security-blog.png)](http://rails-brakeman.com/sprestage/terrible-security-blog)
 
 ## First run of brakeman
 <pre>
